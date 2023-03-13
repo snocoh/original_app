@@ -62,3 +62,6 @@ gem 'devise'
 gem 'pry-rails', group: :development
 
 gem 'active_hash'
+
+gem 'mini_magick'
+gem 'image_processing'
