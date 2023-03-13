@@ -1,0 +1,103 @@
+
+/* スライダー全体 */
+.slide {
+  position   : relative;
+  max-width  : 100%;
+  height     : 100vh;
+  margin     : auto;
+  overflow   : hidden;
+}
+
+/* スライダー画像 */
+.slide .bgImg {
+  position   : absolute;
+  top        : 0;
+  left       : 0;
+  bottom     : 0;
+  right      : 0;
+  opacity    : 0;
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: center;
+  /* 4枚を5s毎で計20s */
+  animation  : pseudoAnimation 20s infinite; /* infiniteで繰り返す */ 
+}
+
+/*
+  ①スライド画像
+  表示する画像を定義
+*/
+.slide .srcImage1 {
+  background-image: url("kazaguruma.png");
+  background-color: rgba(207, 232, 245, 0.5);
+}
+.slide .srcImage2 {
+  animation-delay: 5s;
+  background-image: url("hataori.png");
+  background-color: rgba(207, 232, 245, 0.5);
+}
+.slide .srcImage3 {
+  animation-delay: 10s;
+  background-image: url("otyappa.png");
+  background-color: rgba(207, 232, 245, 0.5);
+}
+.slide .srcImage4 {
+  animation-delay: 15s;
+  background-image: url("tougei.png");
+  background-color: rgba(207, 232, 245, 0.5);
+}
+
+/* 20sのうち最初の約5sだけ表示する */
+@keyframes pseudoAnimation {
+  0% { opacity: 0; }
+  5% { opacity: 0.8; } /* 表示タイミングをずらしてフェードイン風に */
+ 25% { opacity: 0.8; }
+ 30% { opacity: 0; }
+100% { opacity: 0; }
+}
+
+
+/* 全体 */
+.main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.nav {
+  position: absolute;
+  right: 10px;
+  bottom: 200px;
+}
+
+ul {
+  
+}
+
+li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* ロゴ */
+
+.search-bar-contents {
+  width: 100%;
+  height: 100%;
+  margin: 100px;
+  position: relative;
+}
+
+.top-icon {
+  height: 50px;
+  width: 50px;
+  padding: 35px;
+  background-color: white;
+  border-radius: 50px;
+}
