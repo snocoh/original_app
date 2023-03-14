@@ -1,1 +1,22 @@
 <%= render "shared/toppage"%>
+
+<h1>知る、使う、伝える</h3>
+
+<h1>Line Up</h1>
+
+<% @items.each do |item| %>
+  <div class="posted-content">
+    <%= image_tag item.images[0], class: "main-image" %><br>
+    <%= item.content%><br>
+  </div>
+<% end %>
+
+<div class="posted-content">
+  <div class="other-images">
+    <% @item.images[1..-1].each do |image| %>
+      <div class="other-image">
+        <%= image_tag image %>
+      </div>
+    <%end%>
+  </div>
+</div>
