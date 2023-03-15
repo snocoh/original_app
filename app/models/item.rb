@@ -7,7 +7,7 @@ class Item < ApplicationRecord
     validates :postage_id, numericality: { other_than: 1, message: "cant't be blank" }
     validates :delivery_day_id, numericality: { other_than: 1, message: "can't be blank" }
     validates :price, numericality: { only_integer: true, less_than_or_equal_to: 9_999_999 }
-    validates :images, length: { minimum: 1, maximum: 5, message: "は1枚以上5枚以下にしてください" }
+    validates :images, length: { minimum: 1, maximum: 5 }
   end
   
   belongs_to :user

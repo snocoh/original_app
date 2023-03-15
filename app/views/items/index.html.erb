@@ -1,22 +1,37 @@
 <%= render "shared/toppage"%>
 
-<h1>知る、使う、伝える</h3>
+<%# 全体 %>
+<div class="top-main">
 
-<h1>Line Up</h1>
-
-<% @items.each do |item| %>
-  <div class="posted-content">
-    <%= image_tag item.images[0], class: "main-image" %><br>
-    <%= item.content%><br>
+  <%# コンセプト %>
+  <div class="top-concept">
+    <h1>知る、使う、伝える</h1>
   </div>
-<% end %>
 
-<div class="posted-content">
-  <div class="other-images">
-    <% @item.images[1..-1].each do |image| %>
-      <div class="other-image">
-        <%= image_tag image %>
+  <%# アイテム一覧全体 %>
+  <div class="line-up">
+    <%# タイトル %>
+    <div class="line-up-title">
+      <div class="line-up-title_text">
+        <h1>Line Up</h1>
       </div>
-    <%end%>
-  </div>
+    </div>
+    <%# アイテム一覧 %>
+    <div class="content-item">
+    <% if @items != [] %>
+      <% @items.each do |item| %>
+        <div class="posted-content">
+          <%# 代表一枚 %>
+          <%= image_tag item.images[0], class: "main-image" %><br>
+            <%# その他 %>
+            <% item.images[1..-1].each do |image| %>
+              <div class="other-images">
+                <%= image_tag image, class: "other-image" %>
+              </div>
+            <% end %>
+          <%= item.content %><br>
+        </div>
+      <% end %>
+    <% end %>
+
 </div>
