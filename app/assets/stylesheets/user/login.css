@@ -36,10 +36,10 @@
   margin: 10px 0;
 }
 
-.signup {
+.login-signup {
   font-size: medium;
   text-decoration: none;
-
+  color: black;
 }
 
 /* 入力フォーム */

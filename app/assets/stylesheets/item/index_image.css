@@ -1,0 +1,77 @@
+/* 全体 */
+.top-main {
+  width: 100%;
+  height: 100%;
+  font-family: “Hannari”, serif;
+  font-weight: 800;
+  background-color: gray;
+}
+
+/* コンセンプト */
+.top-concept {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(216, 201, 230);
+}
+
+/* 商品一覧 */
+
+/* 一覧全体 */
+.line-up {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(193, 236, 221);
+}
+
+/* LinUpタイトル */
+.line-up-title {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  text-align: center;
+  justify-content: center;
+  margin: 30px auto;
+  background-color: beige;
+}
+
+.line-up-title_text {
+  line-height: 50px;
+  font-size: 30px;
+  letter-spacing: 0.2em;
+}
+
+/* 一覧部分 */
+.content-item{
+  width: 100%;
+  height: 100%;
+  margin: 30px;
+  background-color: beige;
+}
+
+.posted-content {
+  background-color: azure;
+  margin: 15px;
+}
+
+.main-image {
+  height: 500px;
+  width: 500px;
+  /* 縦横比を保ったまま、画像を収める */
+  object-fit: contain;
+  
+}
+
+.other-images {
+  display: flex;
+  margin: 10px;
+  background-color: rgb(168, 203, 168);
+}
+
+.other-image {
+  margin: 10px;
+  height: 100px;
+  width: 100px;
+  /* 縦横比を保ったまま、画像を収める */
+  object-fit: contain;
+}
+
