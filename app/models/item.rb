@@ -8,8 +8,8 @@ class Item < ApplicationRecord
   # belongs_to :my_page
   # has_one    :order
   # has_many :reviews
-  # has_many :tags
-  # has_many :item_tag_relations
+  has_many :item_tags
+  has_many :tags, through: :item_tags
 
   # extend ActiveHash::Associations::ActiveRecordExtensions
   # belongs_to :category

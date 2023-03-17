@@ -33,6 +33,10 @@
               <% end %>
             </div>
           <%= item.content %><br>
+          <div>
+            <div>タグ</div>
+            <div><%= item.tags.first&.tag_name %></div>
+          </div>
         </div>
       <% end %>
     <% end %>

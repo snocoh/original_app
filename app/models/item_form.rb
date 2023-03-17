@@ -1,7 +1,8 @@
 class ItemForm
   include ActiveModel::Model
   #ItemFormクラスのオブジェクトがItemモデルの属性を扱えるようにする
-  attr_accessor :product, :content, :category_id, :postage_id,:delivery_day_id, :price, :user_id, :images
+  attr_accessor :product, :content, :category_id, :postage_id,:delivery_day_id, :price, :user_id, :images,
+                :tag_name
 
   with_options presence: true do
     validates :product
@@ -15,6 +16,17 @@ class ItemForm
   end
 
   def save
-    Item.create(product: product, content: content, category_id: category_id, postage_id: postage_id, delivery_day_id: delivery_day_id, price: price, user_id: user_id, images: images)
+    item = Item.create(product: product, content: content, category_id: category_id, postage_id: postage_id, delivery_day_id: delivery_day_id, price: price, user_id: user_id, images: images)
+    if tag_name.present?
+      tag = Tag.where(tag_name: tag_name).first_or_initialize
+      tag.save
+      ItemTag.create(item_id: item.id, tag_id: tag.id)
+    end
   end
+
+  # controllerで呼び出したupdateメソッドから引数を受け取る
+  # def update(params, item)
+  #   item.update(params)
+  # end
+
 end

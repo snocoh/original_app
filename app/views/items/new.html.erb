@@ -46,6 +46,12 @@
         </div>
         <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
       </div>
+      <div class="form">
+        <div class="weight-bold-text">
+          商品タグ
+        </div>
+        <%= f.text_field :tag_name, placeholder: 'タグを追加' %>
+      </div>
     </div>
     <%# /商品の詳細 %>
 
