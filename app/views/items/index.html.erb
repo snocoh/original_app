@@ -1,5 +1,6 @@
 <%= render "shared/toppage"%>
 
+
 <%# 全体 %>
 <div class="top-main">
 
@@ -24,11 +25,13 @@
           <%# 代表一枚 %>
           <%= image_tag item.images[0], class: "main-image" %><br>
             <%# その他 %>
-            <% item.images[1..-1].each do |image| %>
-              <div class="other-images">
-                <%= image_tag image, class: "other-image" %>
-              </div>
-            <% end %>
+            <div class="posted-content-others">
+              <% item.images[1..-1].each do |image| %>
+                <div class="other-images">
+                  <%= image_tag image, class: "other-image" %>
+                </div>
+              <% end %>
+            </div>
           <%= item.content %><br>
         </div>
       <% end %>
