@@ -23,7 +23,9 @@
       <% @items.each do |item| %>
         <div class="posted-content">
           <%# 代表一枚 %>
-          <%= image_tag item.images[0], class: "main-image" %><br>
+          <%= link_to "/items/#{item.id}" do %>
+            <%= image_tag item.images[0], class: "main-image" %><br>
+          <% end %>
             <%# その他 %>
             <div class="posted-content-others">
               <% item.images[1..-1].each do |image| %>

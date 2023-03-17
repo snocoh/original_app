@@ -1,0 +1,19 @@
+<h3>詳細ページ</h3>
+<div class="posted-content">
+  <%# 代表一枚 %>
+  <%= image_tag @item.images[0], class: "main-image" %><br>
+    <%# その他 %>
+    <div class="posted-content-others">
+      <% @item.images[1..-1].each do |image| %>
+        <div class="other-images">
+          <%= image_tag image, class: "other-image" %>
+        </div>
+      <% end %>
+    </div>
+  <%= @item.content %><br>
+  <div>
+    <div><%= @item.tags.first&.tag_name %></div>
+  </div>
+  </table>
+  <%# <%= link_to '編集', edit_item_path(@item.id)%> %>
+</div>
