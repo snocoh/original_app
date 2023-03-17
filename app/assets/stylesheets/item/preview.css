@@ -25,29 +25,11 @@
 } */
 
 
-/* 全体 */
-
-.items-sell-contents {
-  font-family: “Hannari”, sans-serif;
-  background-color: #f5f5f5;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  min-width: 500px;
-}
-
 .items-sell-header {
   padding: 5vh 0;
   text-align: center;
 }
 
-.items-sell-main {
-  background-color: #FFF;
-  width: 70vw;
-  min-width: 450px;
-  padding: 10vh 15vw;
-}
 
 .items-sell-title {
   font-size: 22px;
@@ -56,21 +38,7 @@
 }
 
 /* 共通 */
-.indispensable {
-  background: #ea352d;
-  margin-left: 8px;
-  padding: 3px;
-  border-radius: 2px;
-  color: #fff;
-  font-size: 12px;
-  font-weight: bold;
-}
 
-.weight-bold-text {
-  font-weight: bold;
-  min-width: 170px;
-  margin-bottom: 10px;
-}
 
 .select-box {
   height: 30px;

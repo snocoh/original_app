@@ -6,21 +6,41 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @item = Item.new
+    @item_form = ItemForm.new
   end
 
   def create
-    @item = Item.new(item_params)
-    if @item.save
+    @item_form = ItemForm.new(item_form_params)
+    if @item_form.valid?
+      @item_form.save
       redirect_to root_path
     else
       render :new
     end
   end
 
+  # def edit
+  #   @item = Item.find(params[:id])
+  #   item_attributes = @item.attributes
+  #   @item_form = ItemForm.new(item_attributes)
+  # end
+
+  # def update
+  #   @item = Item.find(params[:id])
+  #   @item_form = ItemForm.new(item_form_params)
+  #   if @item_form.valid?
+  #     @item_form.update(item_form_params, @item)
+  #     redirect_to root_path
+  #   else
+  #     render :edit
+  #   end
+  # end
+
   private
   
-  def item_params
-    params.require(:item).permit(:product, :content, :category_id, :postage_id, :delivery_day_id, :price, {images: []}).merge(user_id: current_user.id)
+  def item_form_params
+    params.require(:item_form).permit(:product, :content, :category_id, :postage_id, :delivery_day_id, :price, :tag_name, {images: []}).merge(user_id: current_user.id)
   end
+
+  
 end

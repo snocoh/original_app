@@ -61,6 +61,11 @@
   
 }
 
+.posted-content-others {
+  display: flex;
+  background-color: gray;
+}
+
 .other-images {
   display: flex;
   margin: 10px;

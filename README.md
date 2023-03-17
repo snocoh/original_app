@@ -50,9 +50,7 @@
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
-| tag_name     | string     | null: false                    |
-| item         | references | null: false, foreign_key: true |
-| item_tag     | references | null: false, foreign_key: true |
+| tag_name     | string     | null: false, uniqueness: true               |
 
 ### Association
 
@@ -60,7 +58,7 @@
 - has_many :item_tags, through: :item_tag_relations
 
 
-##  item_tags_relations テーブル
+##  item_tags テーブル
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
