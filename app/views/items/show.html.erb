@@ -10,10 +10,28 @@
         </div>
       <% end %>
     </div>
-  <%= @item.content %><br>
+
+  <%# 商品説明 %>
+  <div class="content-product">
+    <%= @item.content %>
+  </div>
+
+  <%# 商品価格、送料 %>
+  <div class="content-product">
+    <span><%= @item.price %>円<br>
+    <%= @item.postage.name %></span>
+  </div>
+
+  <%# 配達予想、カテゴリー %>
+  <div class="content-product">
+    <%= @item.delivery_day.name %>
+    <%= @item.category.name %>
+  </div>
+  
+  <%# タグ %>
   <div>
     <div><%= @item.tags.first&.tag_name %></div>
   </div>
-  </table>
-  <%# <%= link_to '編集', edit_item_path(@item.id)%> %>
+
+  <%= link_to '編集する', edit_item_path(@item.id)%>
 </div>
