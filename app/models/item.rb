@@ -11,8 +11,8 @@ class Item < ApplicationRecord
   has_many :item_tags
   has_many :tags, through: :item_tags
 
-  # extend ActiveHash::Associations::ActiveRecordExtensions
-  # belongs_to :category
-  # belongs_to :postage
-  # belongs_to :delivery_day
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :category
+  belongs_to :postage
+  belongs_to :delivery_day
 end
