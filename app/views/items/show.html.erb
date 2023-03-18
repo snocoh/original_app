@@ -35,13 +35,14 @@
     <div><%= @item.tags.first&.tag_name %></div>
   </div>
 
-  <% if user_signed_in?%>
-    <% if current_user.id == @item.user_id %>
-      <%= link_to '編集する', edit_item_path(@item.id), method: :get, class: "item-edit" %>
-      <%= link_to '削除する', item_path(@item.id), method: :delete, class:"item-destroy" %>
-    <% else %>
-      <%= link_to '購入する', "#" %>
+  <div class="item-controll">
+    <%= link_to '購入する', "#", class: "item-order" %>
+    <% if user_signed_in?%>
+      <% if current_user.id == @item.user_id %>
+        <%= link_to '編集する', edit_item_path(@item.id), method: :get, class: "item-edit" %>
+        <%= link_to '削除する', item_path(@item.id), method: :delete, class:"item-destroy", id: "delete-btn" %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 
 </div>
