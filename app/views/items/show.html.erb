@@ -20,7 +20,11 @@
 
   <%# 商品価格、送料 %>
   <div class="content-product">
-    <span><%= @item.price %>円<br>
+    <% if @item.order == nil %>
+      <span><%= @item.price %>円<br>
+    <% else %>
+      <span>sold out<br>
+    <% end %>
     <%= @item.postage.name %></span>
   </div>
 
@@ -36,12 +40,16 @@
   </div>
 
   <div class="item-controll">
-    <%= link_to '購入する', "#", class: "item-order" %>
-    <% if user_signed_in?%>
-      <% if current_user.id == @item.user_id %>
+    <% if user_signed_in? && current_user.id == @item.user_id %>
+      <% if @item.order == nil %>
         <%= link_to '編集する', edit_item_path(@item.id), method: :get, class: "item-edit" %>
         <%= link_to '削除する', item_path(@item.id), method: :delete, class:"item-destroy", id: "delete-btn" %>
+      <% else %>
+        <%= link_to '削除する', item_path(@item.id), method: :delete, class:"item-destroy", id: "delete-btn" %>
       <% end %>
+    <% elsif @item.order == nil %>
+      <%= link_to '購入する', item_orders_path(@item.id), method: :get, class: "item-order" %>
+    <% else %>
     <% end %>
   </div>
 
