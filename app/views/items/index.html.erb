@@ -33,8 +33,18 @@
               <% end %>
             </div>
           <%= item.content %><br>
+
+          <%# 商品価格、送料 %>
+          <div class="content-product">
+            <% if item.order == nil %>
+              <span><%= item.price %>円<br>
+            <% else %>
+              <span>sold out<br>
+            <% end %>
+            <%= item.postage.name %></span>
+          </div>
+
           <div>
-            <div>タグ</div>
             <div><%= item.tags.first&.tag_name %></div>
           </div>
         </div>
