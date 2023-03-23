@@ -1,11 +1,10 @@
 <%= render "shared/second-header"%>
 マイページ登録
-<%= form_with model: @my_page, url: user_my_pages_path(current_user.id), method: :post, local: true do |f| %>
+<%= form_with model: @my_page, url: user_my_pages_path, method: :post, local: true do |f| %>
 
   <%# 画像 %>
-  <div id="previews"></div>
   <div class="click-upload">
-    <%= f.file_field :images, data: {index: 0}, class: "preview-img" %>
+    <%= f.file_field :image, data: {index: 0}, class: "preview-img" %>
   </div>
   <%# /画像 %>
 

@@ -24,7 +24,7 @@ class MyPagesController < ApplicationController
   private
 
   def my_page_params
-    params.require(:my_page).permit(:name, :profile, :age_id, :prefecture_id, :atelier, :place, :bland, :website, :image).merge(user_id: current_user.id)
+    params.permit(:name, :profile, :age_id, :prefecture_id, :atelier, :place, :bland, :website, :image).merge(user_id: current_user.id)
   end
 
   # def move_to_new
