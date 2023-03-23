@@ -1,0 +1,21 @@
+<%= form_with model: @my_page, url: user_my_pages_path, method: :post, local: true do |f| %>
+
+  <%# 画像 %>
+  <div class="click-upload">
+    <%= f.file_field :image, data: {index: 0}, class: "preview-img" %>
+  </div>
+  <%# /画像 %>
+
+  <%= f.text_field :name, placeholder: "#{current_user.nickname}" %>
+
+  <%= f.text_area :profile, placeholder: "よろしくお願いします" %>
+
+  <%= f.collection_select(:age_id, Age.all, :id, :name, {}, {class:"select-box"}) %>
+
+  <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box"}) %>
+
+  <%= f.text_field :website %>
+
+  <%= f.submit "登録" %>
+
+<% end %>

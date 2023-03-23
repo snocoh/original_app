@@ -1,0 +1,31 @@
+<%# 画面全体 %>
+<div class="index-wrap">
+
+<%# メイン画面全体 %>
+  <div class="index-wrap_bottom">
+
+  <%# プロフィール %>
+  <div class="my_page-profile">
+    <%# 画像 %>
+    <div class="my_page-profile__image">
+      <%= image_tag @user.my_page.image, class:"my_page-profile__image_image" %>
+    </div>
+    <%# テキスト部分 %>
+    <div class="my_page-profile_contents">
+      <%# 名前 %>
+      <div class="my_page-profile__name">
+        <%= @user.my_page.name %>
+        <%# <%= @user.my_page.age.name %> 
+      </div>
+      <%# プロフィール文 %>
+      <div class="my_page-profile__text">
+        <%= @user.my_page.profile %>
+      </div>
+      <%# ウェブサイト情報 %>
+      <div class="my_page-profile__info">
+        <%= link_to @user.my_page.website %>
+      </div>
+    </div>
+  </div>
+      
+  </div>

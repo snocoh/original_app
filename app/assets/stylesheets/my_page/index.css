@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP');
+
+/* 全体 */
+.index-wrap {
+  width: 100vw;
+  height: 100%;
+  background-color: #E7E7E2;
+  /* font-family: 'Hannari', sans-serif; */
+  font-family: 'Noto Serif JP', sans-serif;
+}
+
+/* トップエリア */
+
+.index-wrap_top {
+  width: 100%;
+  height: 100vh;
+  display: block;
+  background-color: #E7E7E2;
+}
+
+/* 記事部分 */
+
+.index-contents {
+  width: 65%;
+  height: calc(100vh - 80px);
+  margin: 0 auto;
+  background-color: #E7E7E2;
+  /* background-color: aliceblue; */
+}
+
+/* タイトル */
+.my_page-title {
+  height: 150px;
+  padding-left: 30px;
+  padding-top: 250px;  
+  border-bottom: 1px solid #d9d9d1;
+  /* background-color: cadetblue; */
+}
+
+.my_page-title_name {
+  display: flex;
+  text-align: center;
+  /* background-color: rgb(228, 209, 212); */
+}
+.my_page-title_name h1 {
+  font-size: 40px;
+  line-height: 40px;
+  padding-bottom: 0;
+  letter-spacing: .12em
+}
+
+.my_page-title_name span {
+  font-size: 30px;
+  padding-left: 20px;
+}
+
+/* プロフィール部分 */
+.my_page-title_text {
+  height: calc(100vh - 400px);
+  padding: 30px 50px;
+  letter-spacing: .12em;
+  padding: 50px;
+  line-height: 30px;
+  display: flex;
+  justify-content: center;
+  /* background-color: rgb(180, 214, 180); */
+}
+
+/* //トップエリア終了 */
+
+
+/* 写真（中央エリア） */
+
+.index-wrap_center {
+  width: 65%;
+  margin: 0 auto;
+  background-color: goldenrod;
+}
+
+.my_page-images {
+  width: 90%;
+  height: 100%;
+  padding-top: 500px;  
+}
+
+.my_page-image {
+  height: 500px;
+  padding-bottom: 140px;
+  object-fit: contain;
+}
+
+/* //写真（中央エリア）終了 */
+
+
+/* 下部エリア */
+
+.index-wrap_bottom {
+  width: 100%;
+  height: 100%;
+  background-color: aquamarine;
+}
+
+/* プロフィール部分 */
+
+.my_page-profile {
+  width: 65%;
+  height: 100vh;
+  margin: 300px auto 0;
+  display: flex;
+  background-color: darkcyan;
+}
+
+/* 画像 */
+.my_page-profile__image {
+  width: 300px;
+  height: 400px;
+  margin: auto 5px auto auto;
+  object-fit: contain;
+  background-color: #d9d9d1;
+}
+
+.my_page-profile__image_image {
+  width: 300px;
+  height: 400px;
+  object-fit: contain;
+}
+
+/* テキスト部分 */
+.my_page-profile_contents {
+  width: 400px;
+  height: 400px;
+  display: block;
+  margin: auto auto auto 5px;
+  font-size: 15px;
+  background-color: antiquewhite;
+}
+
+.my_page-profile__name {
+  margin: 30px;
+  font-size: 30px;
+  letter-spacing: .12em;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #d9d9d1;
+}
+
+.my_page-profile__info {
+  margin: auto 30px;
+  padding: 10px 20px;
+  display: block;
+}
+
+.my_page-profile__info a {
+  text-decoration: none;
+  color: #000;
+}

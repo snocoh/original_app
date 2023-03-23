@@ -1,11 +1,12 @@
 <%= render "shared/second-header"%>
 
-  <%= image_tag @user.my_page.image %>
-  <%= @user.my_page.name %>
-  <%= @user.my_page.profile %>
-  <%= @user.my_page.age.name %>
-  <%= @user.my_page.website %>
-  <%= @user.my_page.atelier %>
-  <%= @user.my_page.prefecture.name %>
-  <%= @user.my_page.place %>
-  <%= @user.my_page.bland %>
+<%# 全体 %>
+<div class="my_page-main">
+
+  <% if @user.user_check_id == 2 %>
+    <%= render "index-creator" %>
+  <% else %>
+    <%= render "index-buyer" %>
+  <% end %>
+
+</div>

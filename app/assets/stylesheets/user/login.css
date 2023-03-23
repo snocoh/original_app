@@ -16,8 +16,8 @@
   background: #8cc7ce;/*背景色*/
   background-color: transparent;
   /* background-color: rgba(235, 244, 244, 0.5); */
-  border-left: double 7px #4ec4d3;/*左線*/
-  border-right: double 7px #4ec4d3;/*右線*/
+  border-left: double 7px #636060;/*左線*/
+  border-right: double 7px #636060;/*右線*/
 }
 
 .form-header-text {
