@@ -2,7 +2,7 @@
 .items-sell-contents {
   width: 100%;
   height: 100%;
-  font-family: “Hannari”, sans-serif;
+  font-family: 'Noto Serif JP', sans-serif;
   font-size: 14px;
   display: flex;
   align-items: center;
@@ -16,8 +16,9 @@
 /* ラベル */
 .weight-bold-text {
   margin-bottom: 10px;
+  margin-top: 50px;
   font-size: medium;
-  font-family: “Hannari”, sans-serif;
+  font-family: 'Noto Serif JP', sans-serif;
   font-weight: 500;
 }
 
@@ -36,7 +37,7 @@
 .items-sell-title {
   height: 50px;
   text-align: 50px;
-  font-family: “Hannari”, serif;
+  font-family: 'Noto Serif JP', sans-serif;
   background-color: beige;
 }
 

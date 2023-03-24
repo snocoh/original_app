@@ -17,6 +17,7 @@ class MyPagesController < ApplicationController
     if @my_page.save
       redirect_to root_path
     else
+      @user = User.find(params[:user_id])
       render :new
     end
   end
