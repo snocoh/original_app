@@ -1,21 +1,21 @@
-<%= render "shared/second-header"%>
-
 <%# 全体 %>
 <div class="new-wrap">
 
-<div class="new-wrap-inner">
+<%= render "shared/second-header"%>
 
-<div class='form-header'>
-  <h1 class='form-header-text'>マイページ登録</h1>
-  <p class="form-acounthelp"><span class="must">*</span> は必須項目です</p>
-</div>
+  <div class="new-wrap-inner">
 
-  <% if @user.user_check_id == 2 %>
-    <%= render "new-creator" %>
-  <% else %>
-    <%= render "new-buyer" %>
-  <% end %>
+    <div class='form-header'>
+      <h1 class='form-header-text'>マイページ登録</h1>
+      <p class="form-acounthelp"><span class="must">*</span> は必須項目です</p>
+    </div>
 
-</div>
+    <% if @user.user_check_id == 2 %>
+      <%= render "new-creator" %>
+    <% else %>
+      <%= render "new-buyer" %>
+    <% end %>
+
+  </div>
 
 </div>

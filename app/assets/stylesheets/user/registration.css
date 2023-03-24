@@ -37,6 +37,11 @@
   background-color: #f5f5f5;
 }
 
-/* サインアップボタン */
-
+/* サインアップボタン・エラー部分 */
 /* ログインに同じ */
+
+/* エラーの崩れ */
+
+.field_with_errors {
+  display: contents;
+}

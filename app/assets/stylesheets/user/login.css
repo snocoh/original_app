@@ -52,31 +52,6 @@
   padding-top: 20px;
 }
 
-/* ラベル部分 */
-
-/* .form-text-wrap {
-  width: 50%;
-  height: 20%;
-  display: flex;
-  justify-content: right;
-  margin-right: 50px;
-} */
-
-/* .form-text {
-  font-size: 20px;
-  padding-top: 5px;
-} */
-
-/* .indispensable {
-  background: skyblue;
-  margin-left: 8px;
-  padding: 3px;
-  border-radius: 2px;
-  color: whitesmoke;
-  font-size: 15px;
-  line-height: 15px;
-} */
-
 /* フォーム部分 */
 
 .form-area {
@@ -120,7 +95,8 @@
 
 /* エラー部分 */
 
-.login-flash-message {
+.error-flash-message {
   text-align: center;
   color: purple;
+  padding-top: 10px;
 }

@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP');
 
+.my_page-main {
+  width: 100%;
+  height: 100%;
+  background-color: #E7E7E2;
+}
+
 /* 全体 */
 .index-wrap {
   width: 100vw;
   height: 100%;
-  background-color: #E7E7E2;
+  background-color: yellow;
   /* font-family: 'Hannari', sans-serif; */
   font-family: 'Noto Serif JP', sans-serif;
 }
@@ -62,7 +68,7 @@
   padding: 50px;
   line-height: 30px;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   /* background-color: rgb(180, 214, 180); */
 }
 
@@ -152,4 +158,22 @@
 .my_page-profile__info a {
   text-decoration: none;
   color: #000;
+}
+
+
+
+/* 買い手 */
+
+.index-wrap_buyer {
+  width: 100%;
+  height: calc(100vh - 49px);
+  background-color: aquamarine;
+}
+
+.my_page-profile_buyer {
+  width: 65%;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  background-color: darkcyan;
 }

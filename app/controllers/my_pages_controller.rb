@@ -4,6 +4,7 @@ class MyPagesController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     unless @user.my_page.present?
+      @my_page = MyPage.new
       render :new
     end
   end
@@ -25,7 +26,7 @@ class MyPagesController < ApplicationController
   private
 
   def my_page_params
-    params.permit(:name, :profile, :age_id, :prefecture_id, :atelier, :place, :bland, :website, :image).merge(user_id: current_user.id)
+    params.require(:my_page).permit(:name, :profile, :age_id, :prefecture_id, :atelier, :place, :bland, :website, :image).merge(user_id: current_user.id)
   end
 
   # def move_to_new
