@@ -3,6 +3,7 @@ class MyPagesController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
+    @items = @user.items
     unless @user.my_page.present?
       @my_page = MyPage.new
       render :new

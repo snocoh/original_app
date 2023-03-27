@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_27_025137) do
+ActiveRecord::Schema.define(version: 2023_03_27_055013) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -65,6 +65,8 @@ ActiveRecord::Schema.define(version: 2023_03_27_025137) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "my_page_id"
+    t.index ["my_page_id"], name: "index_items_on_my_page_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
@@ -118,6 +120,7 @@ ActiveRecord::Schema.define(version: 2023_03_27_025137) do
   add_foreign_key "addresses", "orders"
   add_foreign_key "item_tags", "items"
   add_foreign_key "item_tags", "tags"
+  add_foreign_key "items", "my_pages"
   add_foreign_key "items", "users"
   add_foreign_key "my_pages", "users"
   add_foreign_key "orders", "items"

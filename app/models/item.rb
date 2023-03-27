@@ -4,7 +4,6 @@ class Item < ApplicationRecord
   has_many_attached :images
   has_many :item_tags, dependent: :destroy
   has_many :tags, through: :item_tags
-  # belongs_to :my_page
   has_one    :order, dependent: :destroy
   # has_many :reviews
 
