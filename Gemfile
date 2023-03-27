@@ -71,3 +71,4 @@ gem 'payjp'
 gem 'dotenv-rails'
 
 gem 'geocoder'
+gem 'gon'
