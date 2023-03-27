@@ -1,0 +1,12 @@
+<%# 全体 %>
+<div class="my_page-main">
+
+<%= render "shared/second-header"%>
+
+  <% if @user.user_check_id == 2 %>
+    <%= render "index-creator" %>
+  <% else %>
+    <%= render "index-buyer" %>
+  <% end %>
+
+</div>

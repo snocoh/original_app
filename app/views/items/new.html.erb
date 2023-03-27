@@ -6,7 +6,10 @@
     <h2 class="items-sell-title">作品の情報を入力</h2>
     <%= form_with model: @item_form, url: items_path, method: :post, id: 'new_item', local: true do |f| %>
 
-    <%= render 'shared/error_messages', model: f.object %>
+    <%# エラー表示部分 %>
+    <div class='error-flash-message'>
+      <%= render 'shared/error_messages', model: f.object %>
+    </div>
     
     <%# 商品画像 %>
     <div class="img-upload">

@@ -2,8 +2,6 @@
 
 <%= form_with model: @user, url: "/users/sign_in",class: 'registration-main', local: true do |f| %>
 
-<%# <%= render 'shared/error_messages', model: f.object %> %>
-
 <div class='form-wrap'>
 
   <div class='form-header'>
@@ -13,7 +11,7 @@
       </p>
   </div>
 
-  <div class='login-flash-message'>
+  <div class='error-flash-message'>
     <%= flash[:notice] %>
     <%= flash[:alert] %>
   </div>
@@ -31,7 +29,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Log in", class:"login-btn" %>
+    <%= f.submit "Log in", class:"btn" %>
   </div>
 
 </div>

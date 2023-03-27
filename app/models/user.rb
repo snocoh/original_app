@@ -10,6 +10,11 @@ class User < ApplicationRecord
   validates :password, format: { with: PASSWORD_REGEX }
   validates :user_check_id, numericality: { other_than: 1, message: "can't be blank" }
 
+  has_many :items
+  has_many :orders
+  has_one :my_page
+  
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :user_check
+
 end

@@ -1,0 +1,62 @@
+<div class="new-contents">
+
+<%= form_with model: @my_page, url: user_my_pages_path, method: :post, local: true do |f| %>
+  
+  <%# エラー表示部分 %>
+  <div class='error-flash-message'>
+    <%= render 'shared/error_messages', model: f.object %>
+  </div>
+
+  <%# 画像 %>
+  <div class="form">
+    <div class="weight-bold-text">
+      アカウント画像<span class="must">*</span>
+    </div>
+    <div class="click-upload">
+      <%= f.file_field :image, data: {index: 0}, class: "preview-img" %>
+    </div>
+  </div>
+  <%# /画像 %>
+
+  <div class="form">
+    <div class="weight-bold-text">
+      アカウント名（公開）<span class="must">*</span>
+    </div>
+    <%= f.text_field :name, placeholder: "#{current_user.nickname}", class: "new-text" %>
+  </div>
+
+  <div class="form">
+    <div class="weight-bold-text">
+      プロフィール（公開）<span class="must">*</span>
+    </div>
+    <%= f.text_area :profile, placeholder: "よろしくお願いします", class: "new-text" %>
+  </div>
+
+  <div class="form">
+    <div class="weight-bold-text">
+      あなたの年代を教えてください（購入先にのみ公開されます）<span class="must">*</span>
+    </div>
+    <%= f.collection_select(:age_id, Age.all, :id, :name, {}, {class:"select-box"}) %>
+  </div>
+
+  <div class="form">
+    <div class="weight-bold-text">
+      お住まい（購入先にのみ公開されます）<span class="must">*</span>
+    </div>
+    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box"}) %>
+  </div>
+
+  <div class="form">
+    <div class="weight-bold-text">
+      ウェブサイト・SNS（公開）
+    </div>
+    <%= f.text_field :website, class: "new-text" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "登録", class:"btn" %>
+  </div>
+
+<% end %>
+
+</div>

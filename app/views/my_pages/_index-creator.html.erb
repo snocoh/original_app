@@ -1,0 +1,124 @@
+<%# 全体 %>
+<div class="index-wrap">
+
+  <%# 写真上部 %>
+  <div class="index-wrap_top">
+
+    <%# テキスト部分 %>
+    <div class="index-contents">
+
+      <%# 名前部分 %>
+      <div class="my_page-title">
+        <div class="my_page-title_name">
+          <h1><%= @user.my_page.atelier %></h1>
+          <span>/<%= @user.my_page.name %></span>
+        </div>
+      </div>
+
+      <%# プロフィール文 %>
+      <div class="my_page-title_text">
+        <%= @user.my_page.profile %>
+      </div>
+    </div>
+      
+  </div>
+  <%# //写真上部 %>
+
+  <%# 写真部分 %>
+  <div class="index-wrap_atelier">
+
+      <%# 写真 %>
+      <div class="my_page-images">
+        <%= image_tag "workshop.png", class:"my_page-image" %>
+        <%= image_tag "teshigoto_wood.png", class:"my_page-image" %>
+        <%= image_tag "garasu.png", class:"my_page-image" %>
+        <%= image_tag "ceramic.png", class:"my_page-image" %>
+      </div>
+  
+  </div>
+  <%# //写真部分 %>
+
+
+  <%# アイテム一覧（中央） %>
+  <div class="index-wrap_middle">
+
+    <div classs="index-items-area">
+
+      <%# タイトル %>
+      <div class="index-items-title">
+        <h1 class="index-items-title_text">item</h1>
+      </div>
+
+      <%# itemリスト %>
+      <div class="index-items-lists">
+        <% if @items != [] %>
+        <% @items.each do |item| %>
+        <div class="lists-list">
+          <%# 代表一枚 %>
+            <%= link_to image_tag(item.images[0], class: "lists-list_main_image"), "/items/#{item.id}" %><br>
+          <%# 商品価格、送料 %>
+          <div class="lists-lit_listproduct">
+            <% if item.order == nil %>
+              <%= item.price %>円<br>
+            <% else %>
+              <span>sold out<br>
+            <% end %>
+            <%= item.postage.name %>
+          </div>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+
+
+  <%# 下部 %>
+  <div class="index-wrap_bottom">
+
+      <%# プロフィール %>
+      <div class="my_page-profile">
+        <%# 画像 %>
+        <div class="my_page-profile__image">
+          <%= image_tag @user.my_page.image, class:"my_page-profile__image_image" %>
+        </div>
+        <%# テキスト部分 %>
+        <div class="my_page-profile_contents">
+          <%# 名前 %>
+          <div class="my_page-profile__name">
+            <%= @user.my_page.name %>
+            <%# <%= @user.my_page.age.name %> 
+          </div>
+          <%# プロフィール文 %>
+          <%# <div class="my_page-profile__text">
+            <%= @user.my_page.profile %>
+          <%# </div> %>
+          <%# アトリエ情報 %>
+          <div class="my_page-profile__info">
+            <%= @user.my_page.atelier %>
+            (<%= @user.my_page.bland %>)
+            <br><%= link_to @user.my_page.website %><br>
+            <br><%= @user.my_page.prefecture.name %>
+            <br><%= @user.my_page.place %>
+          </div>
+          <%# 地図 %>
+          <div class="my_page-profile_map">
+            <%= render "map" %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+      <%# メッセージフォーム %>
+      <div class="my_page-messages">
+      </div>
+
+      <%# 投げ銭 %>
+      <div class="my_page-tip">
+      </div>
+      
+  </div>
+  
+</div>

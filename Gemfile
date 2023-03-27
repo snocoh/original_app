@@ -67,3 +67,8 @@ gem 'mini_magick'
 gem 'image_processing'
 
 gem 'payjp'
+
+gem 'dotenv-rails'
+
+gem 'geocoder'
+gem 'gon'

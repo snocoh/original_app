@@ -16,8 +16,8 @@
   background: #8cc7ce;/*背景色*/
   background-color: transparent;
   /* background-color: rgba(235, 244, 244, 0.5); */
-  border-left: double 7px #4ec4d3;/*左線*/
-  border-right: double 7px #4ec4d3;/*右線*/
+  border-left: double 7px #636060;/*左線*/
+  border-right: double 7px #636060;/*右線*/
 }
 
 .form-header-text {
@@ -52,31 +52,6 @@
   padding-top: 20px;
 }
 
-/* ラベル部分 */
-
-/* .form-text-wrap {
-  width: 50%;
-  height: 20%;
-  display: flex;
-  justify-content: right;
-  margin-right: 50px;
-} */
-
-/* .form-text {
-  font-size: 20px;
-  padding-top: 5px;
-} */
-
-/* .indispensable {
-  background: skyblue;
-  margin-left: 8px;
-  padding: 3px;
-  border-radius: 2px;
-  color: whitesmoke;
-  font-size: 15px;
-  line-height: 15px;
-} */
-
 /* フォーム部分 */
 
 .form-area {
@@ -109,7 +84,7 @@
   margin-top: 20px;
 }
 
-.login-btn {
+.btn {
   width: 200px;
   height: 50px;
   margin: 0 auto;
@@ -120,7 +95,8 @@
 
 /* エラー部分 */
 
-.login-flash-message {
+.error-flash-message {
   text-align: center;
   color: purple;
+  padding-top: 10px;
 }
