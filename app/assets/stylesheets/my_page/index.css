@@ -10,7 +10,7 @@
 .index-wrap {
   width: 100vw;
   height: 100%;
-  background-color: yellow;
+  background-color: #E7E7E2;
   /* font-family: 'Hannari', sans-serif; */
   font-family: 'Noto Serif JP', sans-serif;
 }
@@ -80,7 +80,7 @@
 .index-wrap_center {
   width: 65%;
   margin: 0 auto;
-  background-color: goldenrod;
+  /* background-color: goldenrod; */
 }
 
 .my_page-images {
@@ -133,8 +133,8 @@
 
 /* テキスト部分 */
 .my_page-profile_contents {
-  width: 400px;
-  height: 400px;
+  width: 500px;
+  height: 500px;
   display: block;
   margin: auto auto auto 5px;
   font-size: 15px;
@@ -158,6 +158,21 @@
 .my_page-profile__info a {
   text-decoration: none;
   color: #000;
+}
+
+/* マップ */
+.my_page-profile_map {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+#map {
+  width: 70%;
+  height: 90%;
+  margin: auto;
 }
 
 

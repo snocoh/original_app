@@ -19,6 +19,7 @@
       <div class="my_page-title_text">
         <%= @user.my_page.profile %>
       </div>
+    </div>
       
   </div>
   <%# //写真上部 %>
@@ -69,12 +70,13 @@
             <br><%= @user.my_page.prefecture.name %>
             <br><%= @user.my_page.place %>
           </div>
+          <%# 地図 %>
+          <div class="my_page-profile_map">
+            <%= render "map" %>
+          </div>
         </div>
 
       </div>
-
-      <%# 地図 %>
-      <%= render "map" %>
 
       <%# メッセージフォーム %>
       <div class="my_page-messages">
