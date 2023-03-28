@@ -1,56 +1,98 @@
 <%= render "shared/second-header"%>
 
-<h3>詳細ページ</h3>
-<div class="posted-content">
-  <%# 代表一枚 %>
-  <%= image_tag @item.images[0], class: "main-image" %><br>
+<%# 全体 %>
+<div class="show-wrap">
+
+<%# アイテム部分全体 %>
+<div class="show-wrap-inner">
+
+  <%# 画像部分全体 %>
+  <div class="show-images-area">
+
+    <%# 代表一枚 %>
+    <div class="show-image">
+      <%= image_tag @item.images[0], class: "show-main_image" %><br>
+    </div>
     <%# その他 %>
-    <div class="posted-content-others">
+    <div class="show-other_images-area">
       <% @item.images[1..-1].each do |image| %>
-        <div class="other-images">
-          <%= image_tag image, class: "other-image" %>
+        <div class="other-image-box">
+          <%= image_tag image, class: "show-other_image" %>
         </div>
       <% end %>
     </div>
 
-  <%# 商品説明 %>
-  <div class="content-product">
-    <%= @item.content %>
   </div>
 
-  <%# 商品価格、送料 %>
-  <div class="content-product">
-    <% if @item.order == nil %>
-      <span><%= @item.price %>円<br>
-    <% else %>
-      <span>sold out<br>
-    <% end %>
-    <%= @item.postage.name %></span>
+  <%# テキスト部分全体 %>
+  <div class="show-text-area">
+
+    <div class="show-text">
+
+      <%# 商品名 %>
+      <div class="show-product">
+        <h1><%= @item.product %></h1>
+        <h2><%= @my_page.bland %></h2>
+      </div>
+
+      <%# 商品価格、送料 %>
+      <div class="show-price">
+        ￥<%= number_with_delimiter(@item.price) %>
+        <% if @item.order != nil %>
+          <span class="sold-out">( sold out )</span>
+        <% end %>
+      <div class="show-postage">
+        <%= @item.postage.name %></span>
+      </div>
+      </div>
+
+      <%# 商品説明 %>
+      <div class="show-content">
+        <%= @item.content %>
+      </div>
+
+      <%# 購入ボタンほか %>
+      <div class="item-control">
+        <% if user_signed_in? && current_user.id == @item.user_id %>
+        <div class="btn-box">
+            <% if @item.order == nil %>
+              <%= link_to '編集する', edit_item_path(@item.id), method: :get, class: "creator-btn" %>
+              <%= link_to '削除する', item_path(@item.id), method: :delete, class:"creator-btn", id: "delete-btn" %>
+            <% else %>
+              <%= link_to '削除する', item_path(@item.id), method: :delete, class:"creator-btn", id: "delete-btn" %>
+            <% end %>
+        <% elsif @item.order == nil %>
+          <%= link_to '購入する', item_orders_path(@item.id), method: :get, class: "buyer-btn" %>
+        <% else %>
+          <div class="sold-out-btn"><p>sold out</p><div>
+        </div>
+        <% end %>
+      </div>
+
+      <%# 配達予想 %>
+      <div class="show-delivery">
+        <%= image_tag "haisou.png", :size => "80x80" %>
+        <span><%= @item.delivery_day.name %></span>
+      </div>
+      
+      <%# タグ %>
+      <%# <div>
+        <div><%= @item.tags.first&.tag_name %></div>
+      <%# </div> %> 
+
+      <%# 出品者 %>
+      <div class="show-content">
+        <div class="show-creator-atelier">
+          <%= link_to "#{@my_page.atelier}", user_my_pages_path(@item.user.id) %>
+        </div>
+        <div class="show-creator-address">
+          <%= @my_page.prefecture.name %>
+          <%= @my_page.place %>
+          <br><br><%= link_to @my_page.website %><br>
+      </div>
+
+    </div>
   </div>
 
-  <%# 配達予想、カテゴリー %>
-  <div class="content-product">
-    <%= @item.delivery_day.name %>
-    <%= @item.category.name %>
-  </div>
-  
-  <%# タグ %>
-  <div>
-    <div><%= @item.tags.first&.tag_name %></div>
-  </div>
-
-  <div class="item-controll">
-    <% if user_signed_in? && current_user.id == @item.user_id %>
-      <% if @item.order == nil %>
-        <%= link_to '編集する', edit_item_path(@item.id), method: :get, class: "item-edit" %>
-        <%= link_to '削除する', item_path(@item.id), method: :delete, class:"item-destroy", id: "delete-btn" %>
-      <% else %>
-        <%= link_to '削除する', item_path(@item.id), method: :delete, class:"item-destroy", id: "delete-btn" %>
-      <% end %>
-    <% elsif @item.order == nil %>
-      <%= link_to '購入する', item_orders_path(@item.id), method: :get, class: "item-order" %>
-    <% else %>
-    <% end %>
-  </div>
-
+</div>
 </div>
