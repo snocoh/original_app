@@ -18,9 +18,11 @@
 
 /* 一覧全体 */
 .line-up {
+  margin-top: 500px;
   width: 100%;
   height: 100%;
   background-color: rgb(193, 236, 221);
+  z-index: 5;
 }
 
 /* LinUpタイトル */
@@ -32,6 +34,7 @@
   justify-content: center;
   margin: 30px auto;
   background-color: beige;
+  z-index: 6;
 }
 
 .line-up-title_text {
