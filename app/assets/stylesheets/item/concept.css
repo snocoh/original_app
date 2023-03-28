@@ -1,7 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap');
+
+/* コンセンプト */
+.top-concept {
+  width: 100vw;
+  height: 200vh;
+  background-color: rgb(216, 201, 230);
+}
+
+
 /* 全体 */
 .concept-wrap {
   position: relative;
-  margin-top: 400px;
   width: 100%;
   height: 100%;
   /* background-color: rgba(61, 89, 61, 0.449); */
@@ -26,7 +35,7 @@
 /* 丸三つ部分 */
 .concept-circles {
   width: 100vw;
-  padding-top: 100px;
+  padding-top: 700px;
   display: flex;
   justify-content: space-between;
   /* background-color: azure; */
@@ -53,10 +62,49 @@
 }
 
 .circle_text h1 {
+  /* font-family: 'Noto Serif JP', sans-serif; */
   margin: auto;
   padding-left: 50px;
   font-size: calc(3rem);
   letter-spacing: 0.8em;
   z-index: 4;
   border-bottom: 2px solid #d9d9d126;
+}
+
+
+/* テキスト全体 */
+.concept-inner_contents {
+  width: 80%;
+  height: 700px;
+  margin: auto;
+  z-index: 5;
+  /* background-color: rgb(152, 144, 152); */
+}
+
+.contents_area {
+  padding-top: 300px;
+  display: block;
+  justify-content: center;
+}
+
+.contetns_area__title {
+  display: flex;
+  justify-content: center;
+}
+
+.contents_area span {
+}
+
+.contents_area h1 {
+  font-size: calc(3rem);
+  letter-spacing: 0.8em;
+  margin-bottom: 200px;
+}
+
+.contents_area p {
+  font-size: calc(1rem);
+  letter-spacing: 0.2em;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
 }

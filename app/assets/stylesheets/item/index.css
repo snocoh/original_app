@@ -4,15 +4,9 @@
   height: 100%;
   font-family: “Hannari”, serif;
   font-weight: 800;
-  background-color: gray;
+  /* background-color: gray; */
 }
 
-/* コンセンプト */
-.top-concept {
-  width: 100vw;
-  height: 100vh;
-  background-color: rgb(216, 201, 230);
-}
 
 /* 商品一覧 */
 
