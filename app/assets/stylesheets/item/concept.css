@@ -1,0 +1,38 @@
+/* 全体 */
+.concept-wrap {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(19, 102, 19, 0.449);
+}
+
+/* 丸三つ部分 */
+.concept-circles {
+  width: 100vw;
+  margin-top: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: azure;
+}
+
+/* 丸各エリア */
+.circle {
+  width: 30%;
+  height: 500px;
+  border-radius: 50%;
+  background-color:  rgba(106, 107, 106, 0.449);
+}
+
+/* 丸テキスト */
+.circle_text {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.circle_text h1 {
+  margin: auto;
+  font-size: calc(3rem);
+}
