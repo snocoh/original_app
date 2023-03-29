@@ -119,17 +119,19 @@
 .item-control {
   width: 100%;
   margin-top: 100px;
+  display: flex;
 }
 
 /* 販売者ボタン */
 .btn-box {
   width: 200px;
   height: 50px;
-  margin-right: 10px;
+  margin-right: 15px;
   display: flex;
   justify-content: center;
   background-color: #636060;
 }
+
 .btn-box a {
   line-height: 50px;
   display: flex;

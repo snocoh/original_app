@@ -103,6 +103,8 @@ form#new_item {
 
 .back-btn  {
   width: 70px;
+  height: 60px;
+  margin-left: 20px;
   color: #000;
   letter-spacing: .5em;
   display: block;

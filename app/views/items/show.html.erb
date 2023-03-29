@@ -54,18 +54,28 @@
       <%# 購入ボタンほか %>
       <div class="item-control">
         <% if user_signed_in? && current_user.id == @item.user_id %>
-        <div class="btn-box">
+        
             <% if @item.order == nil %>
-              <%= link_to '編集する', edit_item_path(@item.id), method: :get, class: "creator-btn" %>
-              <%= link_to '削除する', item_path(@item.id), method: :delete, class:"creator-btn", id: "delete-btn" %>
+              <div class="btn-box">
+                <%= link_to '編集する', edit_item_path(@item.id), method: :get, class: "creator-btn" %>
+              </div>
+              <div class="btn-box">
+                <%= link_to '削除する', item_path(@item.id), method: :delete, class:"creator-btn", id: "delete-btn" %>
+              </div>
             <% else %>
-              <%= link_to '削除する', item_path(@item.id), method: :delete, class:"creator-btn", id: "delete-btn" %>
+              <div class="btn-box">
+                <%= link_to '削除する', item_path(@item.id), method: :delete, class:"creator-btn", id: "delete-btn" %>
+              </div>
             <% end %>
         <% elsif @item.order == nil %>
-          <%= link_to '購入する', item_orders_path(@item.id), method: :get, class: "buyer-btn" %>
+          <div class="btn-box">
+            <%= link_to '購入する', item_orders_path(@item.id), method: :get, class: "buyer-btn" %>
+          </div>
         <% else %>
-          <div class="sold-out-btn"><p>sold out</p><div>
-        </div>
+          <div class="btn-box">
+            <div class="sold-out-btn"><p>sold out</p><div>
+          </div>
+        
         <% end %>
       </div>
 
