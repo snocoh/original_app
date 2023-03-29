@@ -30,12 +30,12 @@
                 </div>
               <% end %>
             </div>
-          <%= item.content %><br>
+          <%= item.product %><br>
 
           <%# 商品価格、送料 %>
           <div class="content-product">
             <% if item.order == nil %>
-              <span><%= item.price %>円<br>
+              <span>￥<%= item.price %><br>
             <% else %>
               <span>sold out<br>
             <% end %>

@@ -2,7 +2,6 @@
 .top-main {
   width: 100%;
   height: 100%;
-  font-family: “Hannari”, serif;
   font-weight: 800;
   /* background-color: gray; */
 }
@@ -78,3 +77,15 @@
   object-fit: contain;
 }
 
+
+.swiper {
+  width: 600px;
+  height: 300px;
+}
+
+.swiper-slide img {
+  height: auto;
+  width: 30%;
+  object-fit: contain;
+  
+}

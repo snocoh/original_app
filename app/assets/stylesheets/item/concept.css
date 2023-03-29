@@ -62,7 +62,7 @@
 }
 
 .circle_text h1 {
-  /* font-family: 'Noto Serif JP', sans-serif; */
+  font-family: 'Shippori Mincho', serif;
   margin: auto;
   padding-left: 50px;
   font-size: calc(3rem);
@@ -81,17 +81,18 @@
   /* background-color: rgb(152, 144, 152); */
 }
 
+/* テキスト部分 */
 .contents_area {
   padding-top: 300px;
   display: block;
   justify-content: center;
 }
-
+/* メインテキスト */
 .contetns_area__title {
   display: flex;
   justify-content: center;
 }
-
+/* サブテキスト */
 .contents_area span {
 }
 
@@ -99,9 +100,12 @@
   font-size: calc(3rem);
   letter-spacing: 0.8em;
   margin-bottom: 200px;
+  border-bottom: 3px solid #d9d9d1;
+  /* font-family: 'Shippori Mincho', serif; */
 }
 
 .contents_area p {
+  font-family: 'Shippori Mincho', serif;
   font-size: calc(1rem);
   letter-spacing: 0.2em;
   margin-bottom: 30px;

@@ -2,9 +2,12 @@
 
 <div class="items-sell-contents">
 
-  <div class="items-sell-main">
-    <h2 class="items-sell-title">作品の情報を入力</h2>
-    <%= form_with model: @item_form, url: items_path, method: :post, id: 'new_item', local: true do |f| %>
+  <div class='form-header'>
+    <h1 class='form-header-text'>商品出品登録</h1>
+    <p class="form-acounthelp"><span class="must">*</span> は必須項目です</p>
+  </div>
+
+  <%= form_with model: @item_form, url: items_path, method: :post, id: 'new_item', local: true do |f| %>
 
     <%# エラー表示部分 %>
     <div class='error-flash-message'>
@@ -13,126 +16,106 @@
     
     <%# 商品画像 %>
     <div class="img-upload">
-      <div class="weight-bold-text">
-        商品画像
-      </div>
+      
       <div class="image-field">
         <div id="previews"></div>
         <div class="click-upload">
-          <%= f.file_field :images, name: 'item_form[images][]', data: {index: 0}, class: "preview-img" %>
+    
         </div>
       </div>
     </div>
-    <%# /商品画像 %>
 
-    <%# 商品名と商品説明 %>
-    <div class="new-items">
-      <div class="weight-bold-text">
-        商品名
-      </div>
-      <%= f.text_area :product, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
-      <div class="items-explain">
-        <div class="weight-bold-text">
-          商品の説明
-        </div>
-        <%= f.text_area :content, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
-      </div>
-    </div>
-    <%# /商品名と商品説明 %>
-
-    <%# 商品の詳細 %>
-    <div class="items-detail">
-      <div class="weight-bold-text">商品の詳細</div>
       <div class="form">
         <div class="weight-bold-text">
-          カテゴリー
+          商品画像<span class="must">*</span>
+        </div>
+        <%= f.file_field :images, name: 'item_form[images][]', data: {index: 0}, class: "preview-img" %>
+      </div>
+    
+    <%# /商品画像 %>
+
+    <%# 画像以下 %>
+
+    <%# <div class="new-items"> %>
+      
+      <%# 商品名 %>
+      <div class="form">
+        <div class="weight-bold-text">
+          商品名<span class="must">*</span>
+        </div>
+        <%= f.text_area :product, class: "new-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
+      </div>
+
+      <%# 商品説明 %>
+      <div class="form">
+        <div class="weight-bold-text">
+          商品の説明<span class="must">*</span>
+        </div>
+        <%= f.text_area :content, class:"new-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+
+    <%# </div> %>
+
+
+      <%# カテゴリー %>
+      <div class="form">
+        <div class="weight-bold-text">
+          カテゴリー<span class="must">*</span>
         </div>
         <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
       </div>
-      <div class="form">
-        <div class="weight-bold-text">
-          商品タグ
-        </div>
-        <%= f.text_field :tag_name, placeholder: 'タグを追加' %>
-      </div>
-    </div>
-    <%# /商品の詳細 %>
 
-    <%# 配送について %>
-    <div class="items-detail">
-      <div class="weight-bold-text question-text">
-        <span>配送について</span>
-        <a class="question" href="#">?</a>
-      </div>
+      <%# タグ %>
       <div class="form">
         <div class="weight-bold-text">
-          配送料の負担
+          商品タグ（例：キッチン、冠婚葬祭、プレゼント）
+        </div>
+        <%= f.text_field :tag_name, placeholder: 'タグを追加', class:"tag-box" %>
+      </div>
+
+      <%# 送料 %>
+      <div class="form">
+        <div class="weight-bold-text">
+          配送料の負担<span class="must">*</span>
         </div>
         <%= f.collection_select(:postage_id, Postage.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
+      </div>
+
+      <%# 発送日 %>
+      <div class="form">
         <div class="weight-bold-text">
-          発送までの日
+          発送までの日<span class="must">*</span>
         </div>
         <%= f.collection_select(:delivery_day_id, DeliveryDay.all, :id, :name, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
       </div>
-    </div>
-    <%# /配送について %>
 
-    <%# 販売価格 %>
-    <div class="sell-price">
-      <div class="weight-bold-text question-text">
-        <span>販売価格<br>(〜¥9,999,999)</span>
-        <a class="question" href="#">?</a>
-      </div>
-      <div>
-        <div class="price-content">
-          <div class="price-text">
-            <span>価格</span>
-          </div>
-          <span class="sell-yen">¥</span>
-          <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"例）300" %>
+
+      <%# 販売価格 %>
+      <div class="form">
+        <div class="weight-bold-text">
+          価格<span class="must">*</span>
         </div>
+        <span class="sell-yen">¥</span>
+        <%= f.text_field :price, class:"new-item-price", id:"item-price", placeholder:"例）1500" %>
       </div>
-    </div>
-    <%# /販売価格 %>
 
-    <%# 注意書き %>
-    <div class="caution">
-      <p class="sentence">
-        <a href="#">禁止されている出品、</a>
-        <a href="#">行為</a>
-        を必ずご確認ください。
-      </p>
-      <p class="sentence">
-        またブランド品でシリアルナンバー等がある場合はご記載ください。
-        <a href="#">偽ブランドの販売</a>
-        は犯罪であり処罰される可能性があります。
-      </p>
-      <p class="sentence">
-        また、出品をもちまして
-        <a href="#">加盟店規約</a>
-        に同意したことになります。
-      </p>
-    </div>
-    <%# /注意書き %>
     
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
-      <%= f.submit "出品する" ,class:"sell-btn" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
+
+      <div class="sell-btn-box">
+
+        <%= f.submit "出品する" ,class:"sell-btn" %>
+        <%= link_to 'もどる', root_path, class:"back-btn" %>
+
+      </div>
+
     </div>
+
+    
     <%# /下部ボタン %>
-  </div>
+
   <% end %>
 
-  <footer class="items-sell-footer">
-    <ul class="menu">
-      <li><a href="#">プライバシーポリシー</a></li>
-      <li><a href="#">フリマ利用規約</a></li>
-      <li><a href="#">特定商取引に関する表記</a></li>
-    </ul>
-    <%# <%= link_to image_tag 'top_logo.png', root_path %> %>
-    <p class="inc">
-      ©︎Furima,Inc.
-    </p>
-  </footer>
+  
 </div>
