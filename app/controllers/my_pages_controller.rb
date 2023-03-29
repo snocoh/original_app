@@ -12,6 +12,7 @@ class MyPagesController < ApplicationController
 
   def new
     @my_page = MyPage.new
+    @user = User.find(params[:user_id])
   end
 
   def create

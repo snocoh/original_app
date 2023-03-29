@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap');
+
+/* コンセンプト */
+.top-concept {
+  width: 100vw;
+  height: 200vh;
+  background-color: rgb(216, 201, 230);
+}
+
+
+/* 全体 */
+.concept-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(61, 89, 61, 0.449); */
+}
+
+.layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#bg-video {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+/* 丸三つ部分 */
+.concept-circles {
+  width: 100vw;
+  padding-top: 700px;
+  display: flex;
+  justify-content: space-between;
+  /* background-color: azure; */
+  z-index: 1;
+}
+
+/* 丸各エリア */
+.circle {
+  width: 30%;
+  height: 500px;
+  border-radius: 50%;
+  background-color:  rgba(106, 107, 106, 0.449);
+  z-index: 2;
+}
+
+/* 丸テキスト */
+.circle_text {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  z-index: 3;
+}
+
+.circle_text h1 {
+  font-family: 'Shippori Mincho', serif;
+  margin: auto;
+  padding-left: 50px;
+  font-size: calc(3rem);
+  letter-spacing: 0.8em;
+  z-index: 4;
+  border-bottom: 2px solid #d9d9d126;
+}
+
+
+/* テキスト全体 */
+.concept-inner_contents {
+  width: 80%;
+  height: 700px;
+  margin: auto;
+  z-index: 5;
+  /* background-color: rgb(152, 144, 152); */
+}
+
+/* テキスト部分 */
+.contents_area {
+  padding-top: 300px;
+  display: block;
+  justify-content: center;
+}
+/* メインテキスト */
+.contetns_area__title {
+  display: flex;
+  justify-content: center;
+}
+/* サブテキスト */
+.contents_area span {
+}
+
+.contents_area h1 {
+  font-size: calc(3rem);
+  letter-spacing: 0.8em;
+  margin-bottom: 200px;
+  border-bottom: 3px solid #d9d9d1;
+  /* font-family: 'Shippori Mincho', serif; */
+}
+
+.contents_area p {
+  font-family: 'Shippori Mincho', serif;
+  font-size: calc(1rem);
+  letter-spacing: 0.2em;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}

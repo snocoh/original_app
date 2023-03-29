@@ -1,7 +1,192 @@
-.item-controll a{
-  color: black;
+/* ページ全体 */
+.show-wrap {
+  width: 100%;
+  /* background-color: gray; */
 }
 
-.posted-content {
-  color: black;
+
+/* アイテム部分全体 */
+.show-wrap-inner {
+  width: 100%;
+  margin: 30px;
+  display: flex;
+  /* background-color: rgb(249, 199, 106); */
+}
+
+
+/* 画像部分全体 */
+.show-images-area {
+  width: 45%;
+  /* background-color: rgb(151, 120, 195); */
+}
+
+/* メイン画像エリア */
+.show-image {
+  width: 100%;
+  padding: 50px 30px;
+  /* background-color: antiquewhite; */
+}
+
+/* メイン画像 */
+.show-main_image {
+  width: 100%;
+  object-fit: contain; 
+}
+
+/* その他画像エリア */
+.show-other_images-area {
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  flex-flow:wrap;
+  /* background-color: rgb(222, 226, 145); */
+}
+
+.other-image-box {
+  width: 45%;
+  height: 80%;
+  margin: auto;
+  /* background-color: aquamarine; */
+}
+
+/* その他画像 */
+.show-other_image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+}
+
+
+
+/* テキストエリア */
+.show-text-area {
+  width: 55%;
+  padding: 50px;
+  /* background-color: azure; */
+}
+
+/* テキスト部分 */
+.show-text {
+  width: 70%;
+  margin-left: 50px;
+  font-family: 'Noto Serif JP', sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+}
+
+/* 商品名 */
+.show-product h1 {
+  font-size: calc(3rem);
+  letter-spacing: 0.2em;
+  border-bottom: 3px solid #d9d9d1;
+  margin-bottom: 30px;
+}
+/* ブランド名 */
+.show-product h2 {
+  font-size: calc(1.5rem);
+  display: flex;
+  justify-content: right;
+  margin-bottom: 40px;
+}
+
+/* 金額 */
+.show-price {
+  display: flex;
+}
+/* sold out */
+.sold-out {
+  padding-left: 10px;
+}
+/* 送料 */
+.show-postage {
+  margin-top: 5px;
+  padding-left: 20px;
+  font-size: small;
+  margin-bottom: 30px;
+}
+
+/* 商品説明 */
+.show-content {
+  width: 100%;
+  padding: 30px;
+  border-top: 2.5px solid #d9d9d1;
+  border-bottom: 2.5px solid #d9d9d1;
+  margin-bottom: 30px;
+}
+
+
+/* ボタン一覧 */
+.item-control {
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+}
+
+/* 販売者ボタン */
+.btn-box {
+  width: 200px;
+  height: 50px;
+  margin-right: 15px;
+  display: flex;
+  justify-content: center;
+  background-color: #636060;
+}
+
+.btn-box a {
+  line-height: 50px;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.sold-out-btn {
+  width: 200px;
+  height: 50px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  border: #636060;
+  background-color: rgb(229, 226, 226);
+}
+
+.sold-out-btn p {
+  line-height: 50px;
+  color: rgb(103, 100, 100);
+}
+
+/* 発送目安・画像 */
+.show-delivery {
+  margin-top: 50px;
+  display: flex;
+}
+/* 発送目安 */
+.show-delivery span {
+  height: 80px;
+  line-height: 80px;
+  font-size: smaller;
+  padding-left: 10px;
+}
+
+
+/* 出品者情報 */
+
+.show-creator-atelier {
+  letter-spacing: 0.2em;
+  margin-bottom: 40px;
+}
+
+.show-creator-atelier a {
+  text-decoration: underline;
+  color: #636060;
+}
+
+.show-creator-address {
+  font-size: 15px;
+  padding-left: 20px;
+}
+
+.show-creator-address a {
+  text-decoration: none;
+  font-size: 15px;
+  color: #636060;
 }

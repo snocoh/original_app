@@ -26,7 +26,9 @@
       <ul class='lists-right'>  
         <% if user_signed_in? %>
           <li><%= link_to current_user.nickname, user_my_pages_path(current_user.id), class: "user-nickname" %></li>
-          <li><%= link_to '出品する', new_item_path, class: "purchase-list" %></li>
+            <% if current_user.user_check_id == 2 %>
+              <li><%= link_to '出品する', new_item_path, class: "purchase-list" %></li>
+            <% end %>
           <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
         <% else %>
           <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
@@ -39,7 +41,7 @@
       <form class="search-form" action="#">
         <input class='input-box' placeholder='キーワードから探す'>
         <button class="search-button">
-          <%# <%= image_tag "search.png", class:"search-icon" %> %>
+          <%# <%= image_tag "search.png", class:"search-icon" %> 
         </button>
       </form>
 

@@ -28,12 +28,12 @@
   表示する画像を定義
 */
 .slide .srcImage1 {
-  background-image: url("kazaguruma.png");
+  background-image: url("ceramic.png");
   background-color: rgba(207, 232, 245, 0.5);
 }
 .slide .srcImage2 {
   animation-delay: 5s;
-  background-image: url("hataori.png");
+  background-image: url("garasu.png");
   background-color: rgba(207, 232, 245, 0.5);
 }
 .slide .srcImage3 {

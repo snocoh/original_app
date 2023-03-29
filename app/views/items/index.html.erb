@@ -5,9 +5,7 @@
 <div class="top-main">
 
   <%# コンセプト %>
-  <div class="top-concept">
-    <h1>知る、使う、伝える</h1>
-  </div>
+    <%= render "concept"%>
 
   <%# アイテム一覧全体 %>
   <div class="line-up">
@@ -32,12 +30,12 @@
                 </div>
               <% end %>
             </div>
-          <%= item.content %><br>
+          <%= item.product %><br>
 
           <%# 商品価格、送料 %>
           <div class="content-product">
             <% if item.order == nil %>
-              <span><%= item.price %>円<br>
+              <span>￥<%= item.price %><br>
             <% else %>
               <span>sold out<br>
             <% end %>

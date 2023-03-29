@@ -8,6 +8,11 @@ class ItemsController < ApplicationController
 
   def new
     @item_form = ItemForm.new
+    @user = current_user
+    unless @user.my_page.present?
+      redirect_to new_user_my_page_path(user_id: current_user.id)
+    end
+      
   end
 
   def create
@@ -22,6 +27,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @my_page = @item.user.my_page
   end
 
   def edit

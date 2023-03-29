@@ -1,15 +1,34 @@
+/* 全体 */
+.img-upload {
+  width: 100%;
+  height: 300px;
+  background-color: rgb(213, 218, 219, 0.5);
+}
+
+.image-field {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  /* background-color: aliceblue; */
+}
+
+
 #previews {
   display: flex;
+  justify-content: center;
 }
 
 .preview{
-  margin-right: 30px;
+  margin-right: 10px;
 }
 
-.preview-img {
-  
+img.preview-image {
+  max-width: 300px;
+  max-height: 200px;
+  object-fit: contain;
 }
 
+/* 削除ボタン */
 .image-delete-button {
   text-align: center;
   border: solid 1px;
@@ -17,46 +36,6 @@
   margin-bottom: 5px;
 }
 
-/* 削除ボタン
-.image-delete-button {
-  text-align: center;
-  border: solid 1px;
-  cursor: pointer;
-} */
-
-
-.items-sell-header {
-  padding: 5vh 0;
-  text-align: center;
-}
-
-
-.items-sell-title {
-  font-size: 22px;
-  font-weight: bold;
-  text-align: center;
-}
-
-/* 共通 */
-
-.question {
-  width: 20px;
-  height: 20px;
-  border-radius: 10px;
-  background: #0099e8;
-  color: #FFF;
-  font-size: 13px;
-  text-align: center;
-  line-height: 20px;
-  text-decoration: none;
-  margin-left: 5px;
-}
-
-.question-text {
-  display: flex;
-}
-
-/* /共通 */
 
 /* 商品画像 */
 .img-upload {
@@ -73,139 +52,4 @@
 
 .click-upload>p {
   margin-bottom: 15px;
-}
-
-/* /商品画像 */
-
-/* 商品名と商品説明 */
-.new-items {
-  padding: 2vh 0;
-}
-
-.items-text {
-  width: 100%;
-  padding: 16px 16px 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  resize: none;
-}
-
-.items-explain {
-  margin-top: 2vh;
-}
-
-/* /商品名と商品説明 */
-
-/* 商品の詳細など */
-.items-detail {
-  display: flex;
-  justify-content: space-between;
-  padding: 2vh 0;
-}
-
-.items-detail>.form {
-  width: 300px;
-  padding: 2vh 0;
-}
-
-/* /商品の詳細など */
-
-/* 販売価格 */
-.sell-price {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.price-content {
-  width: 300px;
-  border-bottom: 1px solid #ccc;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.price-text {
-  /* min-width: 170px; */
-  display: flex;
-  align-items: center;
-}
-
-.sell-yen {
-  font-size: 18px;
-}
-
-.price-input {
-  height: 30px;
-  text-align: right;
-  padding-right: 10px;
-}
-
-/* /販売価格 */
-
-/* 注意書き */
-.caution {
-  padding: 5vh 0;
-}
-
-.sentence>a {
-  color: #0099e8;
-  text-decoration: none;
-}
-
-/* /注意書き */
-
-/* 下部ボタン */
-.sell-btn-contents {
-  width: 100%;
-  text-align: center;
-}
-
-.sell-btn {
-  background: #ea352d;
-  border: 1px solid #ea352d;
-  color: #fff;
-  width: 100%;
-  height: 50px;
-  font-size: 14px;
-  margin-bottom: 4vh;
-}
-
-.back-btn {
-  background: #aaa;
-  border: 1px solid #aaa;
-  color: #fff;
-  padding: 15px 35%;
-  text-decoration: none;
-}
-
-/* /下部ボタン */
-
-.items-sell-footer {
-  background-color: #f5f5f5;
-  width: 60vw;
-  padding: 3ch 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-
-.items-sell-footer>.menu {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 3vh 0;
-}
-
-.menu>li>a {
-  color: black;
-  font-size: 12px;
-  margin: 2vw;
-}
-
-.inc {
-  font-size: 13px;
 }
