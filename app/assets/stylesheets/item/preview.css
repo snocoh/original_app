@@ -1,25 +1,30 @@
 /* 全体 */
 .img-upload {
-  
-  background-color: olive;
+  width: 100%;
+  height: 300px;
+  background-color: rgb(213, 218, 219);
 }
 
 .image-field {
-  
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  /* background-color: aliceblue; */
 }
 
 
 #previews {
   display: flex;
+  justify-content: center;
 }
 
 .preview{
-  margin-right: 30px;
+  margin-right: 10px;
 }
 
 img.preview-image {
   max-width: 300px;
-  max-height: 300px;
+  max-height: 200px;
   object-fit: contain;
 }
 

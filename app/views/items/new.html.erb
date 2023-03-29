@@ -24,22 +24,25 @@
         </div>
       </div>
     </div>
-
-      <div class="form">
-        <div class="weight-bold-text">
-          商品画像<span class="must">*</span>
-        </div>
-        <%= f.file_field :images, name: 'item_form[images][]', data: {index: 0}, class: "preview-img" %>
-      </div>
     
     <%# /商品画像 %>
 
     <%# 画像以下 %>
 
-    <%# <div class="new-items"> %>
-      
+    <div class="new-items">
+
+
+      <%# 画像 %>
+      <div class="form-item-new">
+        <div class="weight-bold-text">
+          商品画像<span class="must">*</span>
+        </div>
+        <%= f.file_field :images, name: 'item_form[images][]', data: {index: 0}, class: "preview-img" %>
+      </div>
+
+
       <%# 商品名 %>
-      <div class="form">
+      <div class="form-item-new">
         <div class="weight-bold-text">
           商品名<span class="must">*</span>
         </div>
@@ -47,18 +50,15 @@
       </div>
 
       <%# 商品説明 %>
-      <div class="form">
+      <div class="form-item-new">
         <div class="weight-bold-text">
           商品の説明<span class="must">*</span>
         </div>
         <%= f.text_area :content, class:"new-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
       </div>
 
-    <%# </div> %>
-
-
       <%# カテゴリー %>
-      <div class="form">
+      <div class="form-item-new">
         <div class="weight-bold-text">
           カテゴリー<span class="must">*</span>
         </div>
@@ -66,7 +66,7 @@
       </div>
 
       <%# タグ %>
-      <div class="form">
+      <div class="form-item-new">
         <div class="weight-bold-text">
           商品タグ（例：キッチン、冠婚葬祭、プレゼント）
         </div>
@@ -74,7 +74,7 @@
       </div>
 
       <%# 送料 %>
-      <div class="form">
+      <div class="form-item-new">
         <div class="weight-bold-text">
           配送料の負担<span class="must">*</span>
         </div>
@@ -82,7 +82,7 @@
       </div>
 
       <%# 発送日 %>
-      <div class="form">
+      <div class="form-item-new">
         <div class="weight-bold-text">
           発送までの日<span class="must">*</span>
         </div>
@@ -91,7 +91,7 @@
 
 
       <%# 販売価格 %>
-      <div class="form">
+      <div class="form-item-new">
         <div class="weight-bold-text">
           価格<span class="must">*</span>
         </div>
@@ -99,7 +99,7 @@
         <%= f.text_field :price, class:"new-item-price", id:"item-price", placeholder:"例）1500" %>
       </div>
 
-    
+
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
 
@@ -109,6 +109,8 @@
         <%= link_to 'もどる', root_path, class:"back-btn" %>
 
       </div>
+
+    </div>
 
     </div>
 
