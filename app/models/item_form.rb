@@ -39,4 +39,8 @@ class ItemForm
     ItemTag.create(item_id: item.id, tag_id: tag.id) if tag_name.present?
   end
 
+  def destroy(params, item)
+    item.destroy(params)
+  end
+
 end

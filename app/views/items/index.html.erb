@@ -15,38 +15,66 @@
         <h1>Line Up</h1>
       </div>
     </div>
-    <%# アイテム一覧 %>
-    <div class="content-item">
-    <% if @items != [] %>
-      <% @items.each do |item| %>
-        <div class="posted-content">
-          <%# 代表一枚 %>
-            <%= link_to image_tag(item.images[0], class: "main-image"), "/items/#{item.id}" %><br>
-            <%# その他 %>
-            <div class="posted-content-others">
-              <% item.images[1..-1].each do |image| %>
-                <div class="other-images">
-                  <%= image_tag image, class: "other-image" %>
-                </div>
-              <% end %>
+    
+    <%# アイテムひっくるめてエリア %>
+    <div class="content-items">
+
+      <%# アイテム一個ずつエリア %>
+      <div class="content-item">
+
+      <% if @items != [] %>
+
+        <% @items.each do |item| %>
+
+          <div class="posted-content">
+
+            <%# 代表一枚 %>
+              <div class="top-main-item_area">
+                <%= link_to image_tag(item.images[0], class: "main-image"), "/items/#{item.id}" %><br>
+              </div>
+              <%# その他 %>
+              <div class="posted-content-others">
+                <% item.images[1..-1].each do |image| %>
+                  <div class="other-images">
+                    <%= image_tag image, class: "other-image" %>
+                  </div>
+                <% end %>
+              </div>
+
+            <%# 商品情報 %>
+            <div class="top-item-text">
+
+              <%# 商品名 %>
+              <div class="top-item-name">
+                <h3><%= item.product %></h3>
+                <span>（<%= item.user.my_page.bland %>）</span>
+              </div>
+
+              <%# 金額 %>
+              <div class="top-item-price">
+                <% if item.order == nil %>
+                  <p>￥<%= number_with_delimiter(item.price) %></p>
+                  <span><%= item.postage.name %></span>
+                <% else %>
+                  <span>sold out</span>
+                <% end %>
+              </div>
+
+              <%# タグ %>
+              <%# <div>
+                <div><%= item.tags.first&.tag_name</div> %>
+              <%# </div> %> 
+
             </div>
-          <%= item.product %><br>
 
-          <%# 商品価格、送料 %>
-          <div class="content-product">
-            <% if item.order == nil %>
-              <span>￥<%= item.price %><br>
-            <% else %>
-              <span>sold out<br>
-            <% end %>
-            <%= item.postage.name %></span>
           </div>
-
-          <div>
-            <div><%= item.tags.first&.tag_name %></div>
-          </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
+
+      </div>
+    
+    </div>
+
+  </div>
 
 </div>

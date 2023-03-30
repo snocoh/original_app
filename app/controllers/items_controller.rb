@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit]
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
   before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def index
@@ -45,17 +45,16 @@ class ItemsController < ApplicationController
     
     if @item_form.valid?
       @item_form.update(item_form_params, @item)
-      redirect_to root_path
+      redirect_to "/items/#{@item.id}"
     else
       render :edit
     end
   end
 
   def destroy
-    item = Item.find(params[:id])
-    if current_user.id == item.user_id
-      # item.item_tags.destroy_all
-      item.destroy
+    @item = Item.find(params[:id])
+    if current_user.id == @item.user_id
+      @item.destroy
       redirect_to root_path
     end
   end
@@ -65,6 +64,7 @@ class ItemsController < ApplicationController
   def item_form_params
     params.require(:item_form).permit(:product, :content, :category_id, :postage_id, :delivery_day_id, :price, :tag_name, {images: []}).merge(user_id: current_user.id)
   end
+
 
   def move_to_index
     @item = Item.find(params[:id])
