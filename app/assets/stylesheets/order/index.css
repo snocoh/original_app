@@ -177,3 +177,11 @@
   resize: none;
 }
 
+
+/* エラー部分 */
+
+.order-error-flash-message {
+  text-align: left;
+  padding-top: 10px;
+  padding-left: 60px;
+}

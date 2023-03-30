@@ -45,7 +45,7 @@ class ItemsController < ApplicationController
     
     if @item_form.valid?
       @item_form.update(item_form_params, @item)
-      redirect_to root_path
+      redirect_to "/items/#{@item.id}"
     else
       render :edit
     end

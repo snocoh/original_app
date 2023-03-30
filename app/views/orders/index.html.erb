@@ -70,11 +70,14 @@
 
     <%= form_with model: @order_address, url: item_orders_path, id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
 
-    <%= render 'shared/error_messages', model: @order_address %>
-
     <div class='info-input-haedline'>
       <h1>クレジットカード情報入力</h1>
     </div>
+
+    <%# エラー表示部分 %>
+    <div class='order-error-flash-message'>
+      <%= render 'shared/error_messages', model: f.object %>
+    </div> 
 
     <%# カード情報の入力 %>
     <div class='credit-card-form'>
@@ -185,7 +188,7 @@
 
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
-      <%= f.submit "購入する" ,class:"sell-btn" %>
+      <%= f.submit "購入する" ,class:"sell-btn", id:"button" %>
       <div>
         <%= link_to 'もどる', "/items/#{@item.id}", class:"back-btn" %>
       </div>
