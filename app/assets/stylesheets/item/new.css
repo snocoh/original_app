@@ -102,13 +102,12 @@ form#new_item {
 }
 
 .back-btn  {
-  width: 70px;
-  height: 60px;
+  width: 80px;
   margin-left: 20px;
   color: #000;
   letter-spacing: .5em;
   display: block;
   justify-content: right;
   border-bottom: 1px solid;
-  
+  padding-top: 30px;
 }

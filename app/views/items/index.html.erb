@@ -35,7 +35,7 @@
           <%# 商品価格、送料 %>
           <div class="content-product">
             <% if item.order == nil %>
-              <span>￥<%= item.price %><br>
+              <span>￥<%= number_with_delimiter(item.price) %><br>
             <% else %>
               <span>sold out<br>
             <% end %>

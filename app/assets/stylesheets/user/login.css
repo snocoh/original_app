@@ -27,6 +27,7 @@
   border-bottom: 1px solid;
   display: flex;
   justify-content: center;
+  letter-spacing: 0.5em;
 }
 
 .form-acounthelp {
