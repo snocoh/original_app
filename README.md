@@ -59,13 +59,14 @@ https://docs.google.com/spreadsheets/d/1DRgYKKCDlRA5M5CxO1_H9EZsVseAceO9n4EZuiWw
 
 # 実装した機能
 
-#### ユーザー管理
-#### マイページ
-#### 商品出品・編集・削除
+#### ユーザー管理  
+#### マイページ  
+[![Image from Gyazo](https://i.gyazo.com/b5c76dfc9007435aa77b67b9227add7a.png)](https://gyazo.com/b5c76dfc9007435aa77b67b9227add7a)  
+#### 商品出品・編集・削除  
 [![Image from Gyazo](https://i.gyazo.com/1b8c042bd69533aae17175491829e12e.jpg)](https://gyazo.com/1b8c042bd69533aae17175491829e12e)
-#### 商品購入
-[![Image from Gyazo](https://i.gyazo.com/ee0ab1986b00744d336c80421cac3733.jpg)](https://gyazo.com/ee0ab1986b00744d336c80421cac3733)
-
+#### 商品購入  
+[![Image from Gyazo](https://i.gyazo.com/ee0ab1986b00744d336c80421cac3733.jpg)](https://gyazo.com/ee0ab1986b00744d336c80421cac3733)  
+(エラー解消中)
 
 
 # データベース設計
