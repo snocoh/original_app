@@ -127,13 +127,12 @@ https://docs.google.com/spreadsheets/d/1DRgYKKCDlRA5M5CxO1_H9EZsVseAceO9n4EZuiWw
 | delivery_day_id  | integer    | null: false                    |
 | price            | integer    | null: false                    |
 | user             | references | null: false, foreign_key: true |
-| my_page          | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to        :user
 - belongs_to        :my_page
-- has_many          :item_tag_relations
+- has_many          :item_tag
 - has_many          :tags, through: :item_tag_relations
 - has_many          :reviews
 - has_many          :bookmarks
