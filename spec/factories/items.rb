@@ -10,8 +10,8 @@ FactoryBot.define do
     association :user
 
     after(:build) do |item|
-      item.image.attach(io: File.open('public/images/test_image.jpg'), filename: 'test_image.jpg')
-      build_list(:item_tag, 1, item: item, tag: build(:tag))
+      item.images.attach(io: File.open('public/images/test_image.jpg'), filename: 'test_image.jpg')
+      build_list(:item_tag, 2, item: item, tag: build(:tag))
     end
 
   end
