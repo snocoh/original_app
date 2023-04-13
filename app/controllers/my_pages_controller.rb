@@ -1,8 +1,8 @@
 class MyPagesController < ApplicationController
   before_action :authenticate_user!, only: [:index, :new]
+  before_action :set_user, only: [:index, :new]
 
   def index
-    @user = User.find(params[:user_id])
     @items = @user.items
     unless @user.my_page.present?
       @my_page = MyPage.new
@@ -12,7 +12,6 @@ class MyPagesController < ApplicationController
 
   def new
     @my_page = MyPage.new
-    @user = User.find(params[:user_id])
   end
 
   def create
@@ -25,13 +24,15 @@ class MyPagesController < ApplicationController
     end
   end
   
+
+
   private
 
   def my_page_params
     params.require(:my_page).permit(:name, :profile, :age_id, :prefecture_id, :atelier, :place, :bland, :website, :image).merge(user_id: current_user.id)
   end
 
-  # def move_to_new
-    
-  # end
+  def set_my_page
+    @user = User.find(params[:user_id])
+  end
 end

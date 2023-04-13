@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
   before_action :move_to_index, only: [:edit, :update, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
     @items = Item.all
@@ -26,21 +27,17 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
     @my_page = @item.user.my_page
   end
 
   def edit
-    @item = Item.find(params[:id])
     item_attributes = @item.attributes
     @item_form = ItemForm.new(item_attributes)
     @item_form.tag_name = @item.tags.first&.tag_name
   end
 
   def update
-    @item = Item.find(params[:id])
     @item_form = ItemForm.new(item_form_params)
-
     @item_form.images ||= @item.images.blobs
     
     if @item_form.valid?
@@ -52,7 +49,6 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find(params[:id])
     if current_user.id == @item.user_id
       @item.destroy
       redirect_to root_path
@@ -65,7 +61,6 @@ class ItemsController < ApplicationController
     params.require(:item_form).permit(:product, :content, :category_id, :postage_id, :delivery_day_id, :price, :tag_name, {images: []}).merge(user_id: current_user.id)
   end
 
-
   def move_to_index
     @item = Item.find(params[:id])
     if current_user.id != @item.user_id
@@ -73,5 +68,8 @@ class ItemsController < ApplicationController
     end
   end
 
+  def set_item
+    @item = Item.find(params[:id])
+  end
   
 end
